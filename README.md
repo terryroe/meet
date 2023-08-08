@@ -8,6 +8,10 @@ It uses server-less technology, React, and graphing frameworks imported into the
 
 Here is the live site: https://terryroe.github.io/meet/
 
+### Serverless Usage
+
+The Meet app uses serverless technologies for authorization. It is also quickly and easily deployed because it is serverless. The app costs will be small since only executed code is charged for. There are some drawbacks to using serverless technologies, but they should be minimal for a small application like this.
+
 ## User Stories & Scenarios
 
 ### Feature 1: Filter Events By City

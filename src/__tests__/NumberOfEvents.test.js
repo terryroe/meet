@@ -4,11 +4,13 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import NumberOfEvents from '../components/NumberOfEvents';
 
-describe('<NumberOfEvents component />', () => {
+describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsComponent;
 
   beforeEach(() => {
-    NumberOfEventsComponent = render(<NumberOfEvents />);
+    NumberOfEventsComponent = render(
+      <NumberOfEvents setCurrentNOE={() => {}} />
+    );
   });
 
   test('textbox exists on the page', () => {

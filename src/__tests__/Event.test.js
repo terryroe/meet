@@ -1,31 +1,31 @@
 import Event from '../components/Event';
 import { render } from '@testing-library/react';
-import mockData from '../mock-data';
 import userEvent from '@testing-library/user-event';
-
-const mockEvent = mockData[0];
+import { getEvents } from '../api';
 
 describe('<Event /> component', () => {
   let EventComponent;
+  let allEvents;
 
-  beforeEach(() => {
-    EventComponent = render(<Event event={mockEvent} />);
+  beforeEach(async () => {
+    allEvents = await getEvents();
+    EventComponent = render(<Event event={allEvents[0]} />);
   });
 
   test('renders the event title', () => {
-    const title = EventComponent.queryByText(mockEvent.summary);
+    const title = EventComponent.queryByText(allEvents[0].summary);
     expect(title).toBeInTheDocument();
   });
 
   test('renders the event start time', () => {
     const time = EventComponent.queryByText(
-      new Date(mockEvent.start.dateTime).toUTCString()
+      new Date(allEvents[0].start.dateTime).toUTCString()
     );
     expect(time).toBeInTheDocument();
   });
 
   test('renders the event location', () => {
-    const location = EventComponent.queryByText(mockEvent.location);
+    const location = EventComponent.queryByText(allEvents[0].location);
     expect(location).toBeInTheDocument();
   });
 

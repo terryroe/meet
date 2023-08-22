@@ -10,7 +10,7 @@ const NumberOfEvents = () => {
   };
 
   return (
-    <div className="number-of-events">
+    <div id="number-of-events">
       <label htmlFor="number-of-events-input">Number of Events: </label>
       <input
         className="number-of-events-input"

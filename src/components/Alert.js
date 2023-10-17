@@ -51,7 +51,7 @@ class ErrorAlert extends Alert {
 class WarningAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'rgb(255, 255, 0)'; // yellow
+    this.color = 'rgb(150, 75, 0)'; // brown
     this.bgColor = 'rgb(255, 255, 220)'; // light yellow
   }
 }
